@@ -1,0 +1,51 @@
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>H-1B VISA PREDICTION RESULT</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	</head>
+<style>
+        body{
+background-image: url('../static/plane.jpg');
+background-position: center;
+font-family:sans-serif;
+background-size:cover;
+}
+</style>
+    <body>
+
+        <!-- Website Title -->
+		<div class="container">
+            <h1 style="text-align: left; font-size: 55px;font-family: brush script; color:#f10404">H-1B VISA PREDICTION RESULT</h1><br><br>
+            <div class='description'>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction_text==1 %}
+				<h1><font size="5"><b>PREDICTION: <span class='danger'><u>CERTIFIED-WITHDRAWN</font></b></u></span></h1>
+				
+			{% elif prediction_text==0 %}
+				<h1><font size="5"><b>PREDICTION: <span class='safe'><u>'CERTIFIED'</font></b></u></span></h1>
+			{% elif prediction_text==2 %}
+				<h1><font size="5"><b>PREDICTION: <span class='safe'><u>DENIED</font></u></b></span></h1>
+			{% elif prediction_text==3 %}
+				<h1><font size="5"><b>PREDICTION: <span class='safe'><u>WITHDRAWN</font></u></b></span></h1>
+			{% elif prediction_text==4 %}
+				<h1><font size="5"><b>PREDICTION: <span class='safe'><u>PENDING QUALITY AND COMPLIANCE REVIEW - UNASSIGNED</font></b></u></span></h1>
+			{% elif prediction_text==5 %}
+				<h1><font size="5"><b>PREDICTION: <span class='safe'><u>REJECTED</font></b></u></span></h1>
+			{% elif prediction_text==6 %}
+				<h1><font size="5"><b>PREDICTION: <span class='safe'><u>'INVALIDATED'</font></b></u></span></h1>
+			
+			{% endif %}
+		</div>
+
+	
+
+	</body>
+</html>
